@@ -3,7 +3,7 @@
 
     <div class="block">
       <p>Страна</p>
-      <Input placeholder="Поиск стран" @inputText="inputCountry"/>
+      <Input placeholder="Поиск стран" :text="filters.inputCountry" @inputText="inputCountry"/>
       <div class="countries" v-if="filtersCountries.length">
         <div class="country" v-for="(country, index) in filtersCountries" :key="index">
           <input type="checkbox" :id="country" :value="country"
@@ -41,15 +41,18 @@
 
     <div class="block">
       <p>Количество отзывов (от)</p>
-      <InputNumber placeholder="Например, от 10" @inputNumber="inputComment"/>
+      <InputNumber placeholder="Например, от 10" :text="filters.comment"
+        @inputNumber="inputComment"/>
     </div>
 
     <div class="block">
       <p>Цена</p>
       <div class="prices">
-          <InputNumber placeholder="от 0 ₽" @inputNumber="inputPriceFirst"/>
+          <InputNumber placeholder="от 0 ₽" @inputNumber="inputPriceFirst"
+            :text="filters.prices[0]"/>
           &nbsp;&nbsp;-&nbsp;&nbsp;
-          <InputNumber placeholder="до 100 500 ₽" @inputNumber="inputPriceSecond"/>
+          <InputNumber placeholder="до 100 500 ₽" @inputNumber="inputPriceSecond"
+            :text="filters.prices[1]"/>
       </div>
       <div class="priceSlider">
         <Slider :min="0" :max="100500" v-model="filters.prices" :format="formatPrices"/>
