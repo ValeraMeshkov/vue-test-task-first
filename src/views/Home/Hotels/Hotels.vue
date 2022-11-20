@@ -1,9 +1,9 @@
 <template>
   <div class="hotels">
-
+<!--
     {{filters}}
     <hr>
-    {{filtersClone}}
+    {{filtersClone}} -->
 
     <div class="hotel" v-for="(hotel,index) in getHotels" :key="index">
       <div class="left">
