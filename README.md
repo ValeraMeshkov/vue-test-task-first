@@ -1,4 +1,4 @@
-# vue3baze
+# vue-test-task-first
 
 ## Project setup
 ```
